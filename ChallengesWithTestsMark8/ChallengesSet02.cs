@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
+using System.Linq;
 
 namespace ChallengesWithTestsMark8
 {
@@ -7,12 +9,14 @@ namespace ChallengesWithTestsMark8
     {
         public bool CharacterIsALetter(char c)
         {
-            throw new NotImplementedException();
+
+            return Char.IsLetter(c);
+
         }
 
         public bool CountOfElementsIsEven(string[] vals)
         {
-            throw new NotImplementedException();
+            return vals.Length % 2 == 0;
         }
 
         public bool IsNumberEven(int number)
@@ -35,31 +39,89 @@ namespace ChallengesWithTestsMark8
 
         public double SumOfMinAndMax(IEnumerable<double> numbers)
         {
-            throw new NotImplementedException();
+            if (numbers == null || numbers.Count() == 0)
+            {
+                return 0;
+            }
+
+            return numbers.Min() + numbers.Max();
         }
 
         public int GetLengthOfShortestString(string str1, string str2)
         {
-            throw new NotImplementedException();
+            var word1 = str1.Length;
+            var word2 = str2.Length;
+
+            if (word1 < word2)
+            {
+                return word1;
+            }
+            else
+            {
+                return word2;
+            }
         }
 
         public int Sum(int[] numbers)
         {
-            throw new NotImplementedException();
+            var sum = 0;
+            if(numbers == null || numbers.Count() == 0) { return 0; }
+            foreach (var number in numbers) 
+            {
+                sum += number;
+            }
+            return sum;
         }
 
         public int SumEvens(int[] numbers)
         {
-            throw new NotImplementedException();
+            var sum = 0;
+            if (numbers == null)
+            {
+                return 0;
+            }
+            foreach (var number in numbers)
+            {
+                if (number % 2 == 0)
+                {
+                   
+                    sum += number;
+                }
+            }
+
+            return sum;
+
+
+
         }
 
         public bool IsSumOdd(List<int> numbers)
         {
-            throw new NotImplementedException();
+            if (numbers == null)
+            {
+                return false;
+            }
+            var sum = 0;
+            foreach (var number in numbers)
+            {
+                sum += number;
+            }
+            if (sum % 2 != 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public long CountOfPositiveOddsBelowNumber(long number)
         {
+            if (number < 0)
+            {
+                return 0;
+            }
             return number / 2;
         }
     }
