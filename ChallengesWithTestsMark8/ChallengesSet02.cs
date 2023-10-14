@@ -65,7 +65,7 @@ namespace ChallengesWithTestsMark8
         public int Sum(int[] numbers)
         {
             var sum = 0;
-            if(numbers == null || numbers.Count() == 0) { return 0; }
+            if(numbers == null || numbers.Length == 0) { return 0; }
             foreach (var number in numbers) 
             {
                 sum += number;
