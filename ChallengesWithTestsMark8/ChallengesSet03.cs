@@ -9,7 +9,10 @@ namespace ChallengesWithTestsMark8
     {
         public bool ArrayContainsAFalse(bool[] vals)
         {
-            if (vals.Contains(false)) return true; return false;
+            if (vals.Contains(false)) 
+                return true; 
+            
+            return false;
 
         }
 
@@ -19,15 +22,19 @@ namespace ChallengesWithTestsMark8
             {
                 return false;
             }
+
             var sum = 0;
+
             foreach (var number in numbers)
             {
                 sum += number;
             }
+
             if (sum % 2 != 0)
             {
                 return true;
             }
+
             else
             {
                 return false;
@@ -89,7 +96,12 @@ namespace ChallengesWithTestsMark8
 
         public void ChangeAllElementsToUppercase(string[] words)
         {
-            string[] values = words.Select(word => word.ToUpper()).ToArray();
+            //string[] values = words.Select(word => word.ToUpper()).ToArray();
+
+            for(int i = 0; i < words.Length; i++)
+            {
+                words[i] = words[i].ToUpper();
+            }
             
         }
     }
